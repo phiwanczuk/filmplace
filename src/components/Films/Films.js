@@ -11,7 +11,7 @@ class Films extends React.Component {
 
 
     componentDidMount() {
-        fetch('http://www.omdbapi.com/?i=tt3896198&apikey=59e742a6')
+        fetch('http://www.omdbapi.com/?apikey=59e742a6&')
             .then(
                 response => response.json()
             ).then(
@@ -25,7 +25,7 @@ class Films extends React.Component {
         const {data} = this.state
         return (
             <div>
-                <p>{data.Title}</p>
+                <p>{data.Poster}</p>
                 <FilmsSearch data={data}/>
                 <FilmsList data={data}/>
             </div>
