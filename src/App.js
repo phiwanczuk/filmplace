@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import Movies from './components/Movies/Movies'
-import './App.css';
+import Films from './components/Films/Films'
+
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
 
                 <Route exact
                        path="/"
-                       component={Movies} />
+                       component={Films} />
 
 
         </Router>
