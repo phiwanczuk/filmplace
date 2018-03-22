@@ -1,35 +1,32 @@
 import React from 'react'
-import FilmsList from './FilmsList'
-import FilmsSearch from './FilmsSearch'
+import { connect } from 'react-redux'
+import FilmsList from "./FilmsList";
 
 class Films extends React.Component {
 
 
-    state = {
-        data: [],
-        searchValue: ''
-    }
-
-
-    componentDidMount() {
-        fetch('http://www.omdbapi.com/?apikey=59e742a6&')
-            .then(
-                response => response.json()
-            ).then(
-            data => this.setState({data}))
-
-    }
-
 
     render() {
 
-        const {data} = this.state
+
         return (
             <div>
-                <FilmsList data={data}/>
+                {
+                    this.props.filmsData.map((film,index) => (
+                        <div key={index}>
+                            <h2>{film.Title}</h2>
+                            <img src="{film.Poster}"
+                                 alt="{film.Title}"/>
+                        </div>
+                    ))
+                }
             </div>
         )
     }
 }
 
-export default Films
+const mapStateToProps = state => ({
+    filmsData: state.films.filmsData
+})
+
+export default connect(mapStateToProps)(FilmsList)

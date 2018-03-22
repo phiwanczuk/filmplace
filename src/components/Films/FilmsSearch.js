@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { getFilms } from "../../state/films";
 
 class FilmsSearch extends React.Component {
 
@@ -6,45 +8,39 @@ class FilmsSearch extends React.Component {
         inputValue: ''
     }
 
-    handleInputChange = event => {
+    handleInputValueChange = event => {
         this.setState({
             inputValue: event.target.value
         })
     }
 
-    handleSubmit = event => {
+    handleSubmitForm = event => {
         event.preventDefault()
+        this.props.getMovies(this.state.inputValue)
 
-        fetch(`http://www.omdbapi.com/?apikey=f3798525=${this.state.inputValue}`)
-            .then(r => r.json())
-            .then((data) => {
-                this.setState({
-                    films: data.Search,
-                    totalResults: data.totalResults
-                });
-            })
     }
 
     render() {
-        return (
-            <div>
-                <form
-                    onSubmit={this.handleSubmit}
-                >
-                    <input
-                        type="text"
-                        placeholder="enter film here ..."
-                        value={this.state.inputValue}
-                        onChange={this.handleInputChange}
-                    />
-                    <input
-                        type="submit"
-                        value="Search"
-                    />
-                </form>
-            </div>
+        return(
+            <form
+                onSubmit={this.handleSubmitForm}
+            >
+                <input
+                    type="text"
+                    value={this.state.inputValue}
+                    onChange={this.handleInputValueChange}
+                />
+                <input
+                    type="submit"
+                />
+            </form>
         )
     }
 }
 
-export default FilmsSearch
+const mapDispatchToProps = dispatch => ({
+    getMovies : inputValue => dispatch(getFilms(inputValue))
+})
+
+
+export default connect(null, mapDispatchToProps)(FilmsSearch)
