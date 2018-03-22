@@ -1,33 +1,47 @@
 import React from 'react'
 
-class FilmsSearch extends React.Component{
+class FilmsSearch extends React.Component {
 
-
-    state ={
-        filmName: '',
+    state = {
+        inputValue: ''
     }
 
-
-    handleFilmNameInputChange = (event) => {
+    handleInputChange = event => {
         this.setState({
-            filmName: event.target.value
-        });
+            inputValue: event.target.value
+        })
     }
 
-    render(){
-        return(
+    handleSubmit = event => {
+        event.preventDefault()
+
+        fetch(`http://www.omdbapi.com/?apikey=f3798525=${this.state.inputValue}`)
+            .then(r => r.json())
+            .then((data) => {
+                this.setState({
+                    films: data.Search,
+                    totalResults: data.totalResults
+                });
+            })
+    }
+
+    render() {
+        return (
             <div>
-                <form>
+                <form
+                    onSubmit={this.handleSubmit}
+                >
                     <input
                         type="text"
-                        placeholder='enter title'
-                        onChange={this.handleFilmNameInputChange}
-                        value={this.state.filmName}
+                        placeholder="enter film here ..."
+                        value={this.state.inputValue}
+                        onChange={this.handleInputChange}
                     />
-                    <button>search</button>
+                    <input
+                        type="submit"
+                        value="Search"
+                    />
                 </form>
-
-
             </div>
         )
     }

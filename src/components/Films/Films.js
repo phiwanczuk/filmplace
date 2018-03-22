@@ -6,7 +6,8 @@ class Films extends React.Component {
 
 
     state = {
-        data: []
+        data: [],
+        searchValue: ''
     }
 
 
@@ -25,8 +26,6 @@ class Films extends React.Component {
         const {data} = this.state
         return (
             <div>
-                <p>{data.Poster}</p>
-                <FilmsSearch data={data}/>
                 <FilmsList data={data}/>
             </div>
         )

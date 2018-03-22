@@ -1,10 +1,25 @@
 import React from 'react'
+import FilmsSearch from "./FilmsSearch";
 
-class FilmsList extends React.Component{
+class FilmsList extends React.Component {
 
-    render(){
-        return(
+    state = {
+        currentSearchPhrase: ''
+    }
+
+    handleSearchPhraseChange = event => {
+        this.setState({
+            currentSearchPhrase: event.target.value
+        })
+    }
+
+    render() {
+        return (
             <div>
+                <FilmsSearch
+                    searchPhrase={this.state.currentSearchPhrase}
+                    onChange={this.handleSearchPhraseChange}
+                />
 
             </div>
         )

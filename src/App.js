@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import Films from './components/Films/Films'
+import './App.css'
+import { Provider } from 'react-redux'
+import { store } from './store'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Films from './Components/Films'
 
 
 class App extends Component {
-  render() {
-    return (
-        <Router>
-
-                <Route exact
-                       path="/"
-                       component={Films} />
-
-
-        </Router>
-    );
-  }
+    render() {
+        return (
+            <Provider store={store}>
+                <Router>
+                    <div>
+                        <Route exact path="/" component={Films}/>
+                    </div>
+                </Router>
+            </Provider>
+        );
+    }
 }
 
 export default App;
