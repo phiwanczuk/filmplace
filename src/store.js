@@ -1,7 +1,7 @@
 
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import films, { getFilms } from './state/films'
+import films, { getFilms, getSingleFilm } from './state/films'
 
 
 
@@ -17,4 +17,5 @@ export const store = createStore(
     composeEnhancers(applyMiddleware(thunk))
 )
 
-store.dispatch(getFilms('pizda'))
+store.dispatch(getFilms('pizda'));
+store.dispatch(getSingleFilm('tt009685'));

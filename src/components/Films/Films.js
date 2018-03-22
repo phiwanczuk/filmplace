@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import FilmsList from "./FilmsList";
+
 
 class Films extends React.Component {
 
@@ -12,7 +12,7 @@ class Films extends React.Component {
         return (
             <div>
                 {
-                    this.props.filmsData.map((film,index) => (
+                    this.props.filmsData.map && this.props.filmsData.map((film,index) => (
                         <div key={index}>
                             <h2>{film.Title}</h2>
                             <img src="{film.Poster}"
@@ -29,4 +29,4 @@ const mapStateToProps = state => ({
     filmsData: state.films.filmsData
 })
 
-export default connect(mapStateToProps)(FilmsList)
+export default connect(mapStateToProps)(Films)
