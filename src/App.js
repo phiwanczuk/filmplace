@@ -3,7 +3,7 @@ import './App.css'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Films from './Components/Films'
+import Films from './components/Films'
 
 
 class App extends Component {
