@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import { Link }  from 'react-router-dom'
 
 class Films extends React.Component {
 
@@ -8,15 +8,17 @@ class Films extends React.Component {
 
     render() {
 
-
         return (
-            <div>
+            <div className='movies-view'>
                 {
                     this.props.filmsData.map && this.props.filmsData.map((film,index) => (
-                        <div key={index}>
-                            <h2>{film.Title}</h2>
-                            <img src="{film.Poster}"
-                                 alt="{film.Title}"/>
+                        <div  className='movie' key={index}>
+                            <h4>{film.Title}</h4>
+                            <img src={film.Poster}
+                                 alt={film.Title}/>
+                            <Link to={`/film/${film.imdbID}`}>
+                                <button>More films</button>
+                            </Link>
                         </div>
                     ))
                 }
