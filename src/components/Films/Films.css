@@ -1,0 +1,25 @@
+.films-view {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+}
+.film {
+    border: solid #00c6ff 2px;
+    border-radius: 15px;
+    padding: 0 1%;
+    width: 20%;
+    margin: 2% 0;
+}
+.film img {
+    max-width: 100%;
+    max-height: 70%;
+}
+.films-view button {
+    border:none;
+    border-radius: 10px;
+    background: aqua;
+    margin: 1% auto 0;
+    display: block;
+    font-size: 20px;
+}

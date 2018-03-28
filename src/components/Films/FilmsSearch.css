@@ -1,0 +1,18 @@
+form input[type='text'] {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    padding: 0.5%;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+}
+form input[type='submit'] {
+    border:none;
+    border-radius: 10px;
+    background: aqua;
+    margin: 1% auto 0;
+    display: block;
+    font-size: 20px;
+}

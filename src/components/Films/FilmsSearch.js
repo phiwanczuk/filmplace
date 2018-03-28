@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getFilms } from "../../state/films";
+import './FilmsSearch.css'
+
 
 class FilmsSearch extends React.Component {
 
@@ -16,7 +18,7 @@ class FilmsSearch extends React.Component {
 
     handleSubmitForm = event => {
         event.preventDefault()
-        this.props.getMovies(this.state.inputValue)
+        this.props.getFilms(this.state.inputValue)
 
     }
 
@@ -39,7 +41,7 @@ class FilmsSearch extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    getMovies : inputValue => dispatch(getFilms(inputValue))
+    getFilms : inputValue => dispatch(getFilms(inputValue))
 })
 
 

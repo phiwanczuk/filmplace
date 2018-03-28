@@ -13,8 +13,8 @@ const setSingleFilm = singleFilmData => ({
 })
 
 
-export const getSingleFilm = movieId => (dispatch, getState) => {
-    fetch(`http://www.omdbapi.com/?apikey=59e742a6&i=${movieId}`)
+export const getSingleFilm = filmId => (dispatch) => {
+    fetch(`http://www.omdbapi.com/?apikey=59e742a6&i=${filmId}`)
         .then(response => response.json())
         .then(data => {
             dispatch(setSingleFilm(data))
@@ -28,7 +28,7 @@ export const getFilms = SearchInput => dispatch => {
             response => response.json()
         ).then(
         data => {
-            dispatch(setFilms(data))
+            dispatch(setFilms(data.Search))
         }
     )
 }
