@@ -4,7 +4,7 @@ const SET_SINGLE_FILM = 'films/SET-SINGLE-FILM'
 
 const setFilms = filmsData => ({
     type: SET_FILMS,
-        filmsData
+        filmsData: filmsData || {}
 })
 
 const setSingleFilm = singleFilmData => ({
