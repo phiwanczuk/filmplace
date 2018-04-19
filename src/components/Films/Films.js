@@ -18,7 +18,7 @@ class Films extends React.Component {
                             <img src={film.Poster}
                                  alt={film.Title}/>
                             <Link to={`/film/${film.imdbID}`}>
-                                <button>More films</button>
+                                <button>More</button>
                             </Link>
                         </div>
                     ))

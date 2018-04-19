@@ -18,8 +18,13 @@ class FilmsSearch extends React.Component {
 
     handleSubmitForm = event => {
         event.preventDefault();
+        if(this.state.inputValue.length >=1){
+
         this.props.getFilms(this.state.inputValue)
 
+    }else{
+            alert('type at least one character!')
+        }
     };
 
     render() {
@@ -36,6 +41,7 @@ class FilmsSearch extends React.Component {
                 />
                 <input
                     type="submit"
+                    value="Search!"
                 />
             </form>
         )

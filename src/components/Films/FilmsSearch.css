@@ -12,19 +12,21 @@ form input[type='text'] {
 form input[type='submit'] {
     border:none;
     border-radius: 10px;
-    background: aqua;
+    background: seashell;
+    padding: 8px 13px 8px 13px;
+    font-weight: bold;
     margin: 1% auto 0;
     display: block;
-    font-size: 20px;
+    font-size: 15px;
 }
 
-film-form > input{
+.film-form > input{
     border: 1px solid transparent;
 }
 
 
 .film-form > input:focus{
-    border: 2px solid crimson;
+    border: 1px solid crimson;
 }
 
 .film-search{

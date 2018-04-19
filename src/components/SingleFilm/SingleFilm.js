@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getSingleFilm } from "../../state/films";
+import './SingleFilm.css'
 
 class SingleFilm extends React.Component {
 
@@ -17,7 +18,7 @@ class SingleFilm extends React.Component {
                     <div>
                         <img src={this.props.singleFilmData.Poster} alt='not available'/>
                     </div>
-                    <div>
+                    <div className='film-desc'>
                         <time>{this.props.singleFilmData.Runtime}</time>
                         <p>{this.props.singleFilmData.Genre}</p>
                         <p>{this.props.singleFilmData.Plot}</p>
