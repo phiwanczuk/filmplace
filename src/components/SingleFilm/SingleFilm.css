@@ -17,7 +17,25 @@
     border: solid black;
     padding: 10px;
     background: rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 6px black;
+
 }
 .film-desc p{
     font-weight: bolder;
+    text-shadow: 2px 2px 2px black;
+}
+
+.gb-button button{
+    border:none;
+    border-radius: 10px;
+    text-decoration: none;
+    text-underline: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px 10px 15px;
+    margin-top: 15%;
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
 }

@@ -29,6 +29,8 @@ class FilmsSearch extends React.Component {
 
     render() {
         return(
+            <div>
+
             <form
                 className="film-form"
                 onSubmit={this.handleSubmitForm}
@@ -43,7 +45,17 @@ class FilmsSearch extends React.Component {
                     type="submit"
                     value="Search!"
                 />
+
+                <div className='main-cta'>
+                    <h1>
+                        Welcome to Filmplace!
+                    </h1>
+                    <h1>
+                        Type any film you like and get all the crucial information you need!
+                    </h1>
+                </div>
             </form>
+            </div>
         )
     }
 }

@@ -20,7 +20,7 @@
     border-radius: 10px;
     margin: 1% auto 0;
     text-decoration: none;
-    display: block;
+    display: inline-block;
     font-size: 16px;
     font-weight: bold;
     padding: 10px 15px 10px 15px;
@@ -28,3 +28,11 @@
     cursor: pointer;
 }
 
+button:focus {
+    outline: none;
+}
+.main-cta h1{
+    text-shadow: 1px 5px 5px black;
+    text-align: center;
+    margin-top: 5%;
+}
