@@ -8,26 +8,28 @@ class FilmsSearch extends React.Component {
 
     state = {
         inputValue: ''
-    }
+    };
 
     handleInputValueChange = event => {
         this.setState({
             inputValue: event.target.value
         })
-    }
+    };
 
     handleSubmitForm = event => {
-        event.preventDefault()
+        event.preventDefault();
         this.props.getFilms(this.state.inputValue)
 
-    }
+    };
 
     render() {
         return(
             <form
+                className="film-form"
                 onSubmit={this.handleSubmitForm}
             >
                 <input
+                    className='film-search'
                     type="text"
                     value={this.state.inputValue}
                     onChange={this.handleInputValueChange}

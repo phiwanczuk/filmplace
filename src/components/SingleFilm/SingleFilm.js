@@ -11,13 +11,11 @@ class SingleFilm extends React.Component {
     render() {
         return (
             <div className='single-film-view'>
-                <h1>{this.props.singleFilmData} <span>
-                    ({this.props.singleFilmData.Year})
+                <h1>{this.props.singleFilmData.Title} <span>({this.props.singleFilmData.Year})
                 </span></h1>
                 <div>
                     <div>
-                        <img src={this.props.singleFilmData.Poster} alt={this.props.singleFilmData.Title}
-                             alt=""/>
+                        <img src={this.props.singleFilmData.Poster} alt='not available'/>
                     </div>
                     <div>
                         <time>{this.props.singleFilmData.Runtime}</time>
@@ -28,9 +26,10 @@ class SingleFilm extends React.Component {
                         <p>Writer: {this.props.singleFilmData.Writer}</p>
                         <p>Release Date: {this.props.singleFilmData.Released}</p>
                         <p>BoxOffice: {this.props.singleFilmData.BoxOffice}</p>
+                        {console.log(this.props.singleFilmData)}
                     </div>
                 </div>
-
+                {console.log(this.props.singleFilmData)}
             </div>
         )
     }
@@ -43,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
     getSingleFilm: filmId => dispatch(getSingleFilm(filmId))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps(SingleFilm))
+export default connect(mapStateToProps, mapDispatchToProps)(SingleFilm)
